@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('messenger_status', function (Blueprint $table) {
             $table->id();
             $table->boolean('status')->default(true);
-            $table->unsignedBigInteger('messenger_id');
+            $table->unsignedBigInteger('message_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
-            $table->foreign('messenger_id')->references('id')->on('messengers')->onDelete('cascade');
+            $table->foreign('message_id')->references('id')->on('messages')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

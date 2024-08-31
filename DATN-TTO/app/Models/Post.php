@@ -30,7 +30,7 @@ class Post extends Model
     }
 
     //POST_CATEGORY
-    public function Post_categories()
+    public function post_categories()
     {
     return $this->belongsTo(Post_Category::class);
     }

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('fullname', 150);
             $table->tinyInteger('age')->nullable()->unsigned();
             $table->string('email', 200)->unique();
-            $table->string('phonenumber', 10);
+            $table->string('phonenumber', 10)->unique();
             $table->string('avatar', 255)->nullable();
             $table->enum('role', ['admin', 'instructor', 'student'])->default('student');
             $table->enum('status', ['online', 'offline', 'baned']);
