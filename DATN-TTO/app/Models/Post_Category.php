@@ -5,19 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Route extends Model
+class Post_Category extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name_route',
-        'img_route',
-        'discription_route',        
+        'name_category'
     ];
 
-    //ROUTE
-    public function modules()
+    //POST
+    public function posts()
     {
-    return $this->hasMany(Module::class);
+    return $this->hasMany(Post::class);
     }
 }
-

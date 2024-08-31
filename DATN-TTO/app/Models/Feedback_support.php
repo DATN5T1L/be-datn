@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Route extends Model
+class Feedback_support extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name_route',
-        'img_route',
-        'discription_route',        
+        'rating_support',
+        'feedback_test_support',
+        'user_id',
     ];
 
-    //ROUTE
-    public function modules()
+    //USER
+    public function users()
     {
-    return $this->hasMany(Module::class);
+    return $this->belongsTo(User::class);
     }
 }
-

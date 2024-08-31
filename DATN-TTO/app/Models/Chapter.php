@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Module extends Model
+class Chapter extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'route_id',
-        'course_id',
+        'name_chapter',
+        'course_id'
     ];
 
-    //ROUTE
-    public function routes()
+    //LESSON
+    public function lessons()
     {
-    return $this->belongsTo(Route::class);
+    return $this->hasMany(Lesson::class);
     }
 
     //COURSE

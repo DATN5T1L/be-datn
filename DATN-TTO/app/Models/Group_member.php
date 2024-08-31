@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Group_member extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'comment_text',
+        'left_datetime',
         'user_id',
-        'course_id',
-        'post_id',
+        'conversation_id',
     ];
 
     //USER
@@ -21,15 +20,9 @@ class Comment extends Model
     return $this->belongsTo(User::class);
     }
 
-    //COURSE
-    public function courses()
+    //CONVERSATION
+    public function conversations()
     {
-    return $this->belongsTo(Course::class);
-    }
-
-    //POST
-    public function posts()
-    {
-    return $this->belongsTo(Post::class);
+    return $this->belongsTo(Conversation::class);
     }
 }
