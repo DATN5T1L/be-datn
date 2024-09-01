@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Messenger_status extends Model
 {
+    protected $table = 'messenger_status';
     use HasFactory;
     protected $fillable = [
         'status',

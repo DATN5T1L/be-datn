@@ -22,8 +22,8 @@ class TransactionFactory extends Factory
             'transaction_type' => fake()
                 ->randomElement(['payment', 'refund', 'deposit', 'withdrawal']),
             'amount' => fake()->numberBetween(10000, 3000000),
-            'payment_method' => fake()->randomElement(['Momo', 'CKNH', 'VNPAY', 'ZALOPAY']),
-            'status' => fake()->randomElement(['completed', 'processing', 'failed']),
+            'payment_method' => fake()->randomElement(['Bank Transfer', 'Credit Card']),
+            'status' => fake()->randomElement(['pending', 'completed', 'failed']),
             'payment_description' => fake()->text(200),
             'user_id' => User::factory(),
             'wallet_id' => Wallet::factory(),

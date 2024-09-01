@@ -17,7 +17,7 @@ class Post_CategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name_category' => fake()->sentence(1)
         ];
     }
 }

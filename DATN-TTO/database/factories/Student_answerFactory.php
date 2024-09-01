@@ -18,11 +18,9 @@ class Student_answerFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_answer' => rand(0, 1) 
-                ?  fake()->paragraph()
-                :  fake()->randomElement(['A', 'B', 'C', 'D']),
+            'student_answer' => fake()->paragraph(),
             'user_id' => User::factory(),
-            'attempt' => Attempt::factory(),
+            'attempt_id' => Attempt::factory(),
         ];
     }
 }

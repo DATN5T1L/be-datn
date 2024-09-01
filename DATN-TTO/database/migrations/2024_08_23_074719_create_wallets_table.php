@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('wallets', function (Blueprint $table) {
             $table->id();
             $table->decimal('balance', 10, 0)->unsigned();
-            $table->string('name_bank', 100)->nullable();
+            $table->string('bank_name', 100)->nullable();
             $table->string('bank_account_number', 20)->nullable();
             $table->string('bank_account_holder_name', 40)->nullable();
-            $table->string('PIN', 6);
+            $table->string('PIN');
             $table->unsignedBigInteger('user_id'); 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 

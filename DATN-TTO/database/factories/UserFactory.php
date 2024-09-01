@@ -24,10 +24,10 @@ class UserFactory extends Factory
             'fullname' => fake()->name(),
             'age' => fake()->numberBetween(12, 65),
             'email' => fake()->unique()->safeEmail(),
-            'phonenumber' => fake()->unique()->phoneNumber(),
+            'phonenumber' => fake()->unique()->numerify('##########'),
             'avatar' => fake()->imageUrl(200, 200, 'people'),
             'role' => fake()->randomElement(['student', 'instructor', 'admin']),
-            'status' => fake()->randomElement(['online', 'offline', 'banned']),
+            'status' => fake()->randomElement(['online', 'offline']),
         ];
     }
 }

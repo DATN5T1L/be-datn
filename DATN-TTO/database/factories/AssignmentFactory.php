@@ -19,9 +19,7 @@ class AssignmentFactory extends Factory
         return [
             'discription_assignment' => fake()->paragraph(),
             'name_assignment' => fake()->sentence(3),
-            'content_assignment' => rand(0, 1) 
-                ? fake()->paragraphs() 
-                : fake()->regexify('https://example.com/files/[A-Za-z0-9_-]{10}.pdf'),
+            'content_assignment' => fake()->paragraph(),
             'A, 150' => fake()->sentence(),
             'B, 150' => fake()->sentence(),
             'C, 150' => fake()->sentence(),

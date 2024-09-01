@@ -18,7 +18,7 @@ class TimelineFactory extends Factory
     public function definition(): array
     {
         return [
-            'day_of_week' => fake()->date('d-m-Y'),
+            'day_of_week' => fake()->date(),
             'time' => fake()->time(),
             'notes' => fake()->text(50),
             'course_id' => Course::factory(),

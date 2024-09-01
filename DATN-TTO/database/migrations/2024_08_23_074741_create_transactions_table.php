@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->enum('transactions_type', ['Payment', 'Refund', 'Deposit', 'Withdrawal']);
+            $table->enum('transaction_type', ['payment', 'refund', 'deposit', 'withdrawal']);
             $table->decimal('amount', 10, 0)->unsigned();
-            $table->enum('payment_method', ['Banking', 'Momo', 'VNPAY', 'ZALOPAY'])->nullable();
-            $table->enum('status', ['Comleted', 'Processing', 'Failed']);
+            $table->enum('payment_method', ['Bank Transfer', 'Credit Card'])->nullable();
+            $table->enum('status', ['pending', 'completed', 'failed']);
             $table->string('payment_description', 200)->nullable();
             $table->unsignedBigInteger('enrollment_id');
             $table->unsignedBigInteger('wallet_id');

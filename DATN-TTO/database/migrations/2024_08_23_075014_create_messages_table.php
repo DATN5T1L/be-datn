@@ -16,10 +16,10 @@ return new class extends Migration
             $table->integer('receiver_id');
             $table->text('message_text');
             $table->unsignedBigInteger('conversation_id');
-            $table->unsignedBigInteger('sender_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
-            $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
-            $table->foreign('sender_id')->references('id')->on('users')->onDelete('restrict');
+            $table->foreign('conversation_id')->references('id')->on('conversations')->cascadeOnDelete();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
         });
     }
 

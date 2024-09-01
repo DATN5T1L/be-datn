@@ -17,7 +17,8 @@ class ConversationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'conversation_name' => fake()->word(),
+            'conversation_type' => fake()->randomElement(['Group', 'Individual']),
         ];
     }
 }

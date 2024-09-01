@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('feedback_support', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('rating_suport')->unsigned();
+            $table->tinyInteger('rating_support')->unsigned();
             $table->text('feedback_text_support');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

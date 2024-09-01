@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feedback_course extends Model
 {
+    protected $table = 'feedback_course';
     use HasFactory;
     protected $fillable = [
         'rating_course',

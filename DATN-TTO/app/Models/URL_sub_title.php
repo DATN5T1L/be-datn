@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class URL_sub_title extends Model
 {
+    protected $table = 'url_sub_title';
     use HasFactory;
     protected $fillable = [
         'sub_title_video',

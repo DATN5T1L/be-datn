@@ -17,9 +17,9 @@ class RouteFactory extends Factory
     public function definition(): array
     {
         return [
-            'name_route' => fake()->randomElement(['Lộ trình học Front-end', 'Lộ trình học Back-end']),
+            'name_route' => fake()->randomElement(['Lộ trình học Front-end', 'Lộ trình học Back-end', 'Lộ trình UI/UX với Figma']),
             'img_route' => fake()->imageUrl(640, 480),
-            'description_route' => fake()->paragraph(),
+            'discription_route' => fake()->paragraph(),
         ];
     }
 }

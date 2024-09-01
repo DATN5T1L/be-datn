@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('url_sub_title', function (Blueprint $table) {
             $table->id();
-            $table->string('sub_title_video', 10);
+            $table->string('sub_title_video', 255);
             $table->string('sub_title_url', 255);
             $table->unsignedBigInteger('video_lesson_id');
             $table->timestamps();

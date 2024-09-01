@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->id();
-            $table->text('description_assignment')->nullable();
+            $table->text('discription_assignment')->nullable();
             $table->string('name_assignment', 100);
             $table->longText('content_assignment')->nullable();
             $table->string('A, 150')->nullable();

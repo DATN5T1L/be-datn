@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class URL_quality extends Model
 {
+    protected $table = 'url_quality';
     use HasFactory;
     protected $fillable = [
         'quality_video',

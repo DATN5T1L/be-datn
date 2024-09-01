@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post_Category extends Model
 {
+    protected $table = 'post_categories';
     use HasFactory;
     protected $fillable = [
         'name_category'
@@ -17,4 +18,5 @@ class Post_Category extends Model
     {
     return $this->hasMany(Post::class);
     }
+    
 }

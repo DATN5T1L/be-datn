@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group_member extends Model
 {
+    protected $table = 'group_member';
     use HasFactory;
     protected $fillable = [
         'left_datetime',

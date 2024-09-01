@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('messenger_status', function (Blueprint $table) {
             $table->id();
-            $table->boolean('status')->default(true);
+            $table->string('status')->default('readed');
             $table->unsignedBigInteger('message_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\User;
+use App\Models\Message;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class Messenger_statusFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'status' => 'readed',
+            'message_id' => Message::factory(),
+            'user_id' => User::factory()
         ];
     }
 }

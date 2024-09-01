@@ -18,7 +18,7 @@ class CourseFactory extends Factory
     {
         return [
             'name_course' => fake()->sentence(3),
-            'description_course' => fake()->paragraph(),
+            'discription_course' => fake()->paragraph(),
             'img_course' => fake()->imageUrl(640, 480),
             'price_course' => fake()->numberBetween(600000, 2200000),
             'status_course' => fake()->randomElement(['Not registerd', 'In progress', 'Completed']),
