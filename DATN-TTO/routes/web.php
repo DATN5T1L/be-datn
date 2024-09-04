@@ -59,15 +59,15 @@ Route::prefix('admin')->group(function () {
     //PostCategoriesController
     Route::resource('/PostCategoties', PostCategoriesController::class);
     //PostController
-    Route::resources('/Post', PostController::class);
+    Route::resource('/Post', PostController::class);
     //RouteController
     Route::resource('/Route', RouteController::class);
     //StudentAnswerController
-    Route::resourse('/StudentAnswers', StudentAnswerController::class);
+    Route::resource('/StudentAnswers', StudentAnswerController::class);
     //TimelineController
     Route::resource('/Timeline', TimelineController::class);
     //TransactionController
-    Route::resourse('/Transaction', TransactionController::class);
+    Route::resource('/Transaction', TransactionController::class);
     //UserController
     Route::resource('/user', UserController::class);
     //VideoLesssonController

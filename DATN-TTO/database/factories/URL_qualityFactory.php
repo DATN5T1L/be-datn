@@ -18,7 +18,10 @@ class URL_qualityFactory extends Factory
     {
         return [
             'quality_video' => fake()->randomElement(['144', '240', '360', '480', '720', '1080']),
-            'quality_url' => fake()->url(),
+            'quality_url' => $this->faker->randomElement([
+                'https://www.youtube.com/watch?v=' . $this->faker->regexify('[A-Za-z0-9_-]{11}'),
+                'https://vimeo.com/' . $this->faker->numberBetween(100000000, 999999999),
+            ]),
             'video_lesson_id' => Video_lesson::factory(),
         ];
     }
