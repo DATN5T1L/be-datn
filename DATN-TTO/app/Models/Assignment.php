@@ -31,4 +31,10 @@ class Assignment extends Model
     {
     return $this->belongsTo(Lesson::class);
     }
+
+    //COURSE
+    public function courses()
+    {
+    return $this->belongsTo(Course::class);
+    }
 }

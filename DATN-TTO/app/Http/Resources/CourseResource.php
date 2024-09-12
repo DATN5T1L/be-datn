@@ -20,9 +20,10 @@ class CourseResource extends JsonResource
             'discription_course' => $this->discription_course,
             'img_course' => $this->img_course,
             'price_course' => $this->price_course,
-            'state_course' => $this->state_course,
+            'status_course' => $this->status_course,
             'certify_course' => $this->certify_course,
-            // 'users' => new UserResource($this->whenLoaded('users')),
+            'chapters_count' => $this->chapters_count,
+            'assignment_count' => $this->assignment_count
         ];
     }
 }
