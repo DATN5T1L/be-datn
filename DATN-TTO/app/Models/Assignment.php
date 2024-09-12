@@ -17,7 +17,8 @@ class Assignment extends Model
         'C',
         'D',
         'type_assignment',
-        'lesson_id'
+        'lesson_id',
+        'course_id'
     ];
 
     //ATTEMPT

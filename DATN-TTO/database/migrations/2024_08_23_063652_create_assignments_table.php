@@ -21,7 +21,11 @@ return new class extends Migration
             $table->string('C, 150')->nullable();
             $table->string('D, 150')->nullable();
             $table->enum('type_assignment', ['Quiz', 'Coding', 'Resource']);
+            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('course_id');
             $table->timestamps();
+            $table->foreign('lesson_id')->references('id')->on('lessons');
+            $table->foreign('course_id')->references('id')->on('courses');
         });
     }
 

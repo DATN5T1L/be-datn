@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Factories;
-
+use \App\Models\Course;
+use \App\Models\Lesson;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,6 +26,8 @@ class AssignmentFactory extends Factory
             'C, 150' => fake()->sentence(),
             'D, 150' => fake()->sentence(),
             'type_assignment' => collect(['Quiz', 'Coding', 'Resource'])->random(),
+            'lesson_id' => Lesson::factory(),
+            'course_id' => Course::factory(),
         ];
     }
 }

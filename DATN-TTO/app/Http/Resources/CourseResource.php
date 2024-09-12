@@ -23,7 +23,7 @@ class CourseResource extends JsonResource
             'status_course' => $this->status_course,
             'certify_course' => $this->certify_course,
             'chapters_count' => $this->chapters_count,
-            'assignment_count' => $this->assignment_count
+            'assignments_count' => $this->assignments_count
         ];
     }
 }
