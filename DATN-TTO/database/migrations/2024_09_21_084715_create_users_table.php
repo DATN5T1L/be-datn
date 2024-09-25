@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->string('username', 150);
+            $table->string('password');
+            $table->string('fullname', 150);
+            $table->tinyInteger('age')->unsigned()->nullable();
+            $table->string('email')->unique();
+            $table->string('phonenumber', 10);
+            $table->unsignedBigInteger('balance')->default(0);
+            $table->string('PIN')->nullable();
+            $table->string('avatar')->nullable();
+            $table->enum('status_provider', ['Google', 'Facebook']);
+            $table->string('provider_id');
             $table->timestamps();
         });
     }

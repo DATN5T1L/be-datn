@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
+            $table->string('name_route');
+            $table->string('img_route');
+            $table->text('description');
             $table->timestamps();
         });
     }

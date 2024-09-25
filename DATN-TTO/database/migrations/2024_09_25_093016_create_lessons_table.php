@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
+            $table->string('name_lesson', 150);
+            $table->text('description_lesson');
+            $table->string('poster_lesson');
+            $table->enum('type_lesson', ['video', 'document']);
+            $table->unsignedBigInteger('chapter_id');
             $table->timestamps();
+            $table->foreign('chapter_id')
+                ->references('id')
+                ->on('chapters')
+                ->onDelete('cascade');
         });
     }
 

@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('url_qualities', function (Blueprint $table) {
             $table->id();
+            $table->enum('quality_video', ['144', '240', '360', '480', '720', '1080']);
+            $table->string('quality_url');
+            $table->unsignedBigInteger('lesson_id');
             $table->timestamps();
+            $table->foreign('lesson_id')
+                ->references('id')
+                ->on('lessons')
+                ->onDelete('cascade');
         });
     }
 

@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('answers_code', function (Blueprint $table) {
             $table->id();
+            $table->text('correct_answer');
+            $table->unsignedBigInteger('code_id');
             $table->timestamps();
+            $table->foreign('code_id')
+            ->references('id')
+            ->on('codes')
+            ->onDelete('cascade');
         });
     }
 

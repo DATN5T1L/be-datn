@@ -13,7 +13,25 @@ return new class extends Migration
     {
         Schema::create('comments_lesson', function (Blueprint $table) {
             $table->id();
+            $table->text('question_text');
+            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('comment_to')->nullable();
             $table->timestamps();
+            $table->foreign('lesson_id')
+                ->references('id')
+                ->on('lessons')
+                ->onDelete('cascade');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+                
+            $table->foreign('comment_to')
+                ->references('id')
+                ->on('comments_lesson')
+                ->onDelete('cascade');
         });
     }
 

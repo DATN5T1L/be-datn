@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('payment_links', function (Blueprint $table) {
             $table->id();
+            $table->string('bank_name', 100);
+            $table->string('bank_account_number', 20);
+            $table->string('bank_account_holder_name', 100);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 

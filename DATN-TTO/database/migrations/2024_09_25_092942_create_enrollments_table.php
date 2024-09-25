@@ -13,7 +13,21 @@ return new class extends Migration
     {
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
+            $table->tinyInteger('rating_course')->nullable();
+            $table->text('feedback_text_course')->nullable();
+            $table->enum('status_course', ['completed', 'in_progress', 'failed']);
+            $table->string('certificate_course')->nullable();
+            $table->unsignedBigInteger('module_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->foreign('module_id')
+                ->references('id')
+                ->on('modules')
+                ->onDelete('restrict');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
         });
     }
 

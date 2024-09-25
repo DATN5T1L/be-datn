@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('chapters', function (Blueprint $table) {
             $table->id();
+            $table->string('name_chapter', 150);
+            $table->unsignedBigInteger('course_id');
             $table->timestamps();
+            $table->foreign('course_id')
+                ->references('id')
+                ->on('courses')
+                ->onDelete('cascade');
         });
     }
 

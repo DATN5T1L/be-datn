@@ -13,7 +13,15 @@ return new class extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
+            $table->text('question_faq');
+            $table->text('answer_faq');
+            $table->unsignedBigInteger('lesson_id');
             $table->timestamps();
+            
+            $table->foreign('lesson_id')
+                ->references('id')
+                ->on('lessons')
+                ->onDelete('cascade');
         });
     }
 

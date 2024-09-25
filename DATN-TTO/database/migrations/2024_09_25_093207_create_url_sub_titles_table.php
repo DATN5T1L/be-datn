@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('url_sub_titles', function (Blueprint $table) {
             $table->id();
+            $table->enum('sub_title_video', ['Vietnamese', 'English', 'Chinese', 'Japanese', 'Russian']);
+            $table->string('sub_title_url');
+            $table->unsignedBigInteger('lesson_id');
             $table->timestamps();
+            $table->foreign('lesson_id')
+                ->references('id')
+                ->on('lessons')
+                ->onDelete('cascade');
         });
     }
 

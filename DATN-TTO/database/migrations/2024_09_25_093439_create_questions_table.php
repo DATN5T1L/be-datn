@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
+            $table->text('content_question');
+            $table->enum('type_question', ['multiple_choice', 'fill', 'true_false']);
+            $table->unsignedBigInteger('exercise_id');
             $table->timestamps();
+            $table->foreign('exercise_id')
+            ->references('id')
+            ->on('exercises')
+            ->onDelete('cascade');
         });
     }
 

@@ -13,7 +13,19 @@ return new class extends Migration
     {
         Schema::create('status_videos', function (Blueprint $table) {
             $table->id();
+            $table->boolean('status_video')->default(false);
+            $table->unsignedInteger('cache_time_video');
+            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('enrollment_id');
             $table->timestamps();
+            $table->foreign('lesson_id')
+                ->references('id')
+                ->on('lessons')
+                ->onDelete('cascade');
+            $table->foreign('enrollment_id')
+                ->references('id')
+                ->on('enrollments')
+                ->onDelete('cascade');
         });
     }
 
