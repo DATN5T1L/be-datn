@@ -17,4 +17,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/user', UserApiController::class);
-Route::resource('/course', CourseApiController::class);
