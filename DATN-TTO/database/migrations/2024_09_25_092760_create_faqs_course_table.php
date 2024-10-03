@@ -11,17 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('codes', function (Blueprint $table) {
+        Schema::create('faqs_course', function (Blueprint $table) {
             $table->id();
-            $table->text('question_code');
-            $table->text('answer_code');
-            $table->text('tutorial_code');
-            $table->unsignedBigInteger('exercise_id');
+            $table->text('question_faq');
+            $table->text('answer_faq');
+            $table->unsignedBigInteger('course_id');
             $table->timestamps();
-            $table->foreign('exercise_id')
-            ->references('id')
-            ->on('exercises')
-            ->onDelete('cascade');
+            
+            $table->foreign('course_id')
+                ->references('id')
+                ->on('courses')
+                ->onDelete('cascade');
         });
     }
 
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('codes');
+        Schema::dropIfExists('faqs_course');
     }
 };

@@ -18,8 +18,11 @@ return new class extends Migration
             $table->unsignedBigInteger('price_course');
             $table->unsignedBigInteger('discount_price_course')->nullable();
             $table->enum('status_course', ['active', 'inactive', 'archived']);
-            $table->integer('view_course', 8);
-
+            $table->unsignedInteger('views_course');
+            $table->float('rating_course', 5, 2);
+            $table->tinyInteger('num_lesson');
+            $table->decimal('tax_rate', 2, 0, 1);
+            $table->boolean('del_flag')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
             $table->foreign('user_id')

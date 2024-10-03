@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
             $table->string('name_lesson', 150);
-            $table->text('description_lesson');
+            $table->text('discription_lesson');
             $table->string('poster_lesson');
             $table->enum('type_lesson', ['video', 'document']);
             $table->unsignedBigInteger('chapter_id');

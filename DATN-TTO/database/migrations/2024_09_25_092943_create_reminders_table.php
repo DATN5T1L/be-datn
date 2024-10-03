@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('faqs', function (Blueprint $table) {
+        Schema::create('reminders', function (Blueprint $table) {
             $table->id();
-            $table->text('question_faq');
-            $table->text('answer_faq');
-            $table->unsignedBigInteger('lesson_id');
+            $table->enum('day_of_week', ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday']);
+            $table->time('time');
+            $table->enum('status', ['active', 'inactive']);
+            $table->unsignedBigInteger('enrollment_id');
+
             $table->timestamps();
-            
-            $table->foreign('lesson_id')
+            $table->foreign('enrollment_id')
                 ->references('id')
-                ->on('lessons')
+                ->on('enrollments')
                 ->onDelete('cascade');
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('faqs');
+        Schema::dropIfExists('reminders');
     }
 };

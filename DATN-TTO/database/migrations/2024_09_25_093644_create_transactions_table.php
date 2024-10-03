@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->enum('transaction_type', ['purchase', 'refund', 'deposit']);
             $table->unsignedBigInteger('amount');
-            $table->
+            $table->enum('payment_method', ['Card', 'Momo', 'VnPay']);
             $table->enum('status', ['pending', 'completed', 'failed', 'canceled']);
             $table->text('payment_discription')->nullable();
             $table->unsignedBigInteger('enrollment_id');

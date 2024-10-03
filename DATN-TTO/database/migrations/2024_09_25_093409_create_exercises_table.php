@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('exercises', function (Blueprint $table) {
             $table->id();
-            $table->string('name_exercises', 150);
-            $table->text('discription_exercises');
-            $table->enum('type_exercises', ['quiz', 'code']);
-            $table->boolean('status_exercises')->default(false);
+            $table->string('name_exercise', 150);
+            $table->text('discription_exercise');
+            $table->enum('type_exercise', ['quiz', 'code']);
+            $table->boolean('status_exercise')->default(false);
             $table->unsignedBigInteger('lesson_id');
             $table->unsignedBigInteger('enrollment_id');
             $table->timestamps();

@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
             $table->tinyInteger('rating_course')->nullable();
-            $table->text('feedback_text_course')->nullable();
+            $table->text('feedback_text')->nullable();
             $table->enum('status_course', ['completed', 'in_progress', 'failed']);
             $table->string('certificate_course')->nullable();
+            $table->boolean('enroll')->default(0);
             $table->unsignedBigInteger('module_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

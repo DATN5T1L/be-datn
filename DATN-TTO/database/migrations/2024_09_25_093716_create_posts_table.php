@@ -26,7 +26,7 @@ return new class extends Migration
                 ->onDelete('cascade');
             $table->foreign('category_id')
                 ->references('id')
-                ->on('categories')
+                ->on('post_categories')
                 ->onDelete('cascade');
         });
     }
