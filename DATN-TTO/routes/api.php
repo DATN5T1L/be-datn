@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\CourseApiController;
+use App\Http\Controllers\API\RouteApiController;
 use App\Http\Controllers\API\UserApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/user', UserApiController::class);
+Route::resource('/route', RouteApiController::class);
