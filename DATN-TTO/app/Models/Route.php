@@ -12,7 +12,7 @@ class Route extends Model
     protected $fillable = [
         'name_route',
         'img_route',
-        'description_route',
+        'discription_route',
         'status'
     ];
 
