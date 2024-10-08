@@ -19,9 +19,9 @@ class Lesson extends Model
     ];
 
     //FAQ
-    public function faqs()
+    public function faqs_lesson()
     {
-        return $this->hasMany(FAQ::class);
+        return $this->hasMany(FAQ_Lesson::class);
     }
 
     //COMMENT_LESSON
@@ -52,6 +52,12 @@ class Lesson extends Model
     public function exercises()
     {
         return $this->hasMany(Exercise::class);
+    }
+
+    //NOTE
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
     }
 
     //CHAPTER

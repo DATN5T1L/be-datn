@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('fullname', 150);
             $table->tinyInteger('age')->unsigned()->nullable();
             $table->string('email')->unique();
-            $table->string('phonenumber', 10);
+            $table->string('phonenumber', 10)->nullable();
             $table->unsignedBigInteger('balance')->default(0);
             $table->string('PIN')->nullable();
             $table->string('avatar')->nullable();
-            $table->enum('status_provider', ['Google', 'Facebook']);
-            $table->string('provider_id');
+            $table->enum('status_provider', ['Google', 'Facebook'])->nullable();
+            $table->string('provider_id')->nullable();
             $table->timestamps();
         });
     }

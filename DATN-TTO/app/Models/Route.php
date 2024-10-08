@@ -12,8 +12,8 @@ class Route extends Model
     protected $fillable = [
         'name_route',
         'img_route',
-        'discription_route',
-        'status',
+        'description_route',
+        'status'
     ];
     protected $attributes = [
         'status' => 'default',

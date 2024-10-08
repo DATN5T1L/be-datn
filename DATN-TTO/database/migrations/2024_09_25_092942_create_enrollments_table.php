@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->tinyInteger('rating_course')->nullable();
             $table->text('feedback_text')->nullable();
-            $table->enum('status_course', ['completed', 'in_progress', 'failed']);
+            $table->enum('status_course', ['completed', 'in_progress', 'failed'])->default('in_progress');
             $table->string('certificate_course')->nullable();
             $table->boolean('enroll')->default(0);
             $table->unsignedBigInteger('module_id');
