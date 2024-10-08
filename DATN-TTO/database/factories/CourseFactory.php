@@ -26,7 +26,7 @@ class CourseFactory extends Factory
         'num_lesson' => fake()->numberBetween(1, 100),
         'tax_rate' => fake()->randomFloat(2, 0, 1),
         'del_flag' => fake()->boolean(0),   
-        'user_id' => User::factory()
+        'user_id' => User::factory(),
         ];
     }
 }

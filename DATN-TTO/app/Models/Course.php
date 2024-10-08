@@ -20,7 +20,11 @@ class Course extends Model
         'num_lesson',
         'tax_rate',
         'del_fig',
-        'user_id'
+        'user_id',
+    ];
+
+    protected $attributes = [
+        'status_course' => 'inactive',
     ];
 
     //MODULE

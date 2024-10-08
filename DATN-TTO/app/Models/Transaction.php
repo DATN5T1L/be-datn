@@ -18,7 +18,9 @@ class Transaction extends Model
         'enrollment_id',
         'user_id'
     ];
-
+    protected $attributes = [
+        'status' => 'pending',
+    ];
     //ENROLLMENT
     public function enrollment()
     {

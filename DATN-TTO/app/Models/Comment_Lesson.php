@@ -16,7 +16,9 @@ class Comment_Lesson extends Model
         'user_id',
         'comment_to'
     ];
-
+    protected $attributes = [
+        'status' => 'active',
+    ];
     //COMMENT - BÌNH LUẬN
     public function comments()
     {

@@ -13,6 +13,11 @@ class Route extends Model
         'name_route',
         'img_route',
         'description_route',
+        'status'
+    ];
+
+    protected $attributes = [
+        'status' => 'default',
     ];
 
     //MODULE

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('img_course');
             $table->unsignedBigInteger('price_course');
             $table->unsignedBigInteger('discount_price_course')->nullable();
-            $table->enum('status_course', ['active', 'inactive', 'archived']);
+            $table->enum('status_course', ['active', 'inactive', 'archived'])->default('inactive');
             $table->unsignedInteger('views_course');
             $table->float('rating_course', 5, 2);
             $table->tinyInteger('num_lesson');

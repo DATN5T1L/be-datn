@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_route');
             $table->string('img_route');
-            $table->enum('status', ['default', 'customize']);
+            $table->enum('status', ['default', 'customize'])->default('default');
             $table->text('discription_route');
             $table->timestamps();
         });

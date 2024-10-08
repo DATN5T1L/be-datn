@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('comments_lesson', function (Blueprint $table) {
             $table->id();
             $table->text('question_text');
-            $table->enum('status', ['active', 'inactive']);
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->unsignedBigInteger('lesson_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('comment_to')->nullable();

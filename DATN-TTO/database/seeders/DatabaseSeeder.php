@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Reminder::factory(5)->create();
         \App\Models\Chapter::factory(5)->create();
         \App\Models\Lesson::factory(5)->create();
+        \App\Models\Note::factory(5)->create();
         \App\Models\FAQ_Lesson::factory(5)->create();
         \App\Models\Url_Quality::factory(5)->create();
         \App\Models\Url_Sub_Title::factory(5)->create();

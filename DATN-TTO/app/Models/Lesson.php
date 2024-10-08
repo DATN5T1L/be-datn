@@ -54,6 +54,12 @@ class Lesson extends Model
         return $this->hasMany(Exercise::class);
     }
 
+    //NOTE
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+
     //CHAPTER
     public function chapter()
     {

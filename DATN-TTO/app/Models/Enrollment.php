@@ -19,6 +19,9 @@ class Enrollment extends Model
         'user_id',
     ];
 
+    protected $attributes = [
+        'status_course' => 'in_progress',
+    ];
     //TRANSACTION
     public function transactions()
     {

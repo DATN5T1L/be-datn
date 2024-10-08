@@ -11,27 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments_post', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->text('comment_text');
-            $table->enum('status', ['active', 'inactive'])->default('active');
-            $table->unsignedBigInteger('post_id');
+            $table->string('title_note');
+            $table->text('content_note');
+            $table->unsignedInteger('cache_time_note');
+            $table->unsignedBigInteger('lesson_id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('comment_to')->nullable();
             $table->timestamps();
-            $table->foreign('post_id')
-                ->references('id')
-                ->on('posts')
-                ->onDelete('cascade');
 
+            $table->foreign('lesson_id')
+                ->references('id')
+                ->on('lessons')
+                ->onDelete('cascade');
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->onDelete('cascade');
-                
-            $table->foreign('comment_to')
-                ->references('id')
-                ->on('comments_post')
                 ->onDelete('cascade');
         });
     }
@@ -41,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments_post');
+        Schema::dropIfExists('notes');
     }
 };

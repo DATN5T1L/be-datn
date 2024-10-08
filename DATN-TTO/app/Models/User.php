@@ -76,6 +76,12 @@ class User extends Authenticatable
         return $this->hasMany(Payment_Link::class);
     }
 
+    //NOTE
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+
     //TRANSACTION
     public function transactions()
     {
