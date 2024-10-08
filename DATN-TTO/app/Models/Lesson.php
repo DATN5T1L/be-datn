@@ -19,9 +19,9 @@ class Lesson extends Model
     ];
 
     //FAQ
-    public function faqs()
+    public function faqs_lesson()
     {
-        return $this->hasMany(FAQ::class);
+        return $this->hasMany(FAQ_Lesson::class);
     }
 
     //COMMENT_LESSON
