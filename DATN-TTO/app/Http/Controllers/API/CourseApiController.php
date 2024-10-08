@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CourseResource;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class CourseApiController extends Controller
@@ -12,7 +14,20 @@ class CourseApiController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $courses = Course::all();
+            return response()->json([
+            'status' => 'success',
+            'message' => 'Dữ liệu được lấy thành công',
+            'data' => CourseResource::collection($courses),
+            ], 200);
+            } catch (\Exception $e) {
+            return response()->json([
+            'status' => 'fail',
+            'message' => $e->getMessage(),
+            'data' => null,
+            ], 500);
+            }
     }
 
     /**

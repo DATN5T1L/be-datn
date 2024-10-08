@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/user', UserApiController::class);
 Route::post('/send-reset-password-mail', [UserApiController::class, 'forgotPassword']);
+Route::resource('/course', CourseApiController::class);

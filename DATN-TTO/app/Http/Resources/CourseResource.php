@@ -24,9 +24,9 @@ class CourseResource extends JsonResource
             'views_course' => $this->views_course,
             'rating_course' => $this->rating_course,
             'num_lesson' => $this->num_lesson,
-            'tax_rate' => $this->ax_rate,
+            'tax_rate' => $this->tax_rate,
             'del_flag' => $this->del_flag,
-            'user_id' => $this->user_id,
+            'instructor_id' => $this->user_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
