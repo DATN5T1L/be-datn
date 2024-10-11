@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\ChapterApiController;
+use App\Http\Controllers\api\Comment_DocumentApiController;
 use App\Http\Controllers\API\CourseApiController;
 use App\Http\Controllers\API\RouteApiController;
 use App\Http\Controllers\api\Url_QualityApiController;
@@ -22,8 +23,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/user', UserApiController::class);
 Route::post('/send-reset-password-mail', [UserApiController::class, 'forgotPassword']);
-Route::resource('/route', RouteApiController::class);
 Route::resource('/course', CourseApiController::class);
 Route::resource('/chapter', ChapterApiController::class);
 Route::resource('/url_quality', Url_QualityApiController::class);
 Route::resource('/url_sub_title', Url_Sub_TitleApiController::class);
+Route::resource('/comment_document', Comment_DocumentApiController::class);
+Route::resource('/route', RouteApiController::class);

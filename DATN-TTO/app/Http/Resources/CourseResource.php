@@ -7,7 +7,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class CourseResource extends JsonResource
 {
-    /**
+        /**
      * Transform the resource into an array.
      *
      * @return array<string, mixed>
@@ -30,7 +30,8 @@ class CourseResource extends JsonResource
             'instructor_id' => $this->user_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'chapters' => ChapterResource::collection($this->chapters),
+            'chapters' => $this->chapters->pluck('id'), 
         ];
     }
 }
+

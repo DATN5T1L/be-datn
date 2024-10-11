@@ -30,7 +30,7 @@ class Course extends Model
     //MODULE
     public function modules()
     {
-        return $this->hasMany(Module::class);
+        return $this->hasMany(Module::class,);
     }
 
     //FAVORITE_COURSE
@@ -45,7 +45,7 @@ class Course extends Model
         return $this->hasMany(Chapter::class);
     }
 
-    //LESSON
+    //DOCUMENT
     public function documents()
     {
         return $this->hasManyThrough(Document::class, Chapter::class);

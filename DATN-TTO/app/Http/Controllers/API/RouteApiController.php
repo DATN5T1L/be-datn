@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\RouteResource;
+use App\Models\Module;
 use App\Models\Route;
 use Illuminate\Http\Request;
 
@@ -82,6 +83,7 @@ class RouteApiController extends Controller
     public function show(string $id)
     {
         try {
+            // $route = Route::with('modules.course')findOrFail($id);
             $route = Route::findOrFail($id);
             return response()->json([
                 'status' => 'success',

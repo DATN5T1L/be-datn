@@ -23,13 +23,13 @@ class Route extends Model
     //MODULE
     public function modules()
     {
-        return $this->hasMany(Module::class);
+        return $this->hasMany(Module::class, 'route_id');
     }
 
     //COURSE
     public function courses()
     {
-        return $this->hasManyThrough(Module::class, Course::class);
+        return $this->hasManyThrough(Course::class, Module::class, 'route_id', 'id');
     }
 
     //ENROLLMENT
