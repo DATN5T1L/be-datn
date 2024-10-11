@@ -14,7 +14,7 @@
       <div class="logo">  
         <img src=" https://media.licdn.com/dms/image/C4D0BAQEwg5FK93uumQ/company-logo_200_200/0/1519923012279?e=2147483647&v=beta&t=63CNoS8OTR4lHjPhHSO7eFFqwLGwYunWfyDBV3tdc0c">  
       </div>  
-      <li><a href="#web">Web Technology</a></li>  
+      <li><a href="#web">Nguyễn Minh Tâm</a></li>  
       <li><a href="#program">C Programming</a></li>  
       <li><a href="#course">Courses</a></li>  
     </ul>  

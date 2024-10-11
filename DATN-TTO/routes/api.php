@@ -21,11 +21,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/user', UserApiController::class);
-Route::post('/send-reset-password-mail', [UserApiController::class, 'forgotPassword']);
+    Route::post('/send-reset-password-mail', [UserApiController::class, 'forgotPassword']);
 Route::post('/reset-password', [UserApiController::class, 'resetPassword']);
-Route::post('/verifyToken', [UserApiController::class, 'resetPassword']);
+Route::post('/verifyToken', [UserApiController::class, 'verifyToken']);
 Route::resource('/route', RouteApiController::class);
 Route::resource('/course', CourseApiController::class);
-Route::resource('/chapter', ChapterApiController::class);
+// Route::resource('/chapter', ChapterApiController::class);
 Route::resource('/url_quality', Url_QualityApiController::class);
 Route::resource('/url_sub_title', Url_Sub_TitleApiController::class);

@@ -18,6 +18,7 @@ class UserApiController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         try {
@@ -35,7 +36,6 @@ class UserApiController extends Controller
             ], 500);
         }
     }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -228,14 +228,14 @@ class UserApiController extends Controller
         ]);
 
         // Kiểm tra mã xác thực
-        $passwordReset = DB::table('password_resets')->where('token', $request->token)->first();
+        $passwordReset = DB::table('password_reset_tokens')->where('token', $request->token)->first();
 
         if (!$passwordReset) {
             return response()->json(['message' => 'Mã xác thực không hợp lệ'], 400);
         }
 
         // Kiểm tra thời gian mã
-        if (Carbon::parse($passwordReset->created_at)->addMinutes(10)->isPast()) {
+        if (Carbon::parse($passwordReset->created_at)->addSeconds(120)->isPast()) {
             return response()->json(['message' => 'Mã xác thực đã hết hạn'], 400);
         }
 
