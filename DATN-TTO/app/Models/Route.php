@@ -25,4 +25,16 @@ class Route extends Model
     {
         return $this->hasMany(Module::class);
     }
+
+    //COURSE
+    public function courses()
+    {
+        return $this->hasManyThrough(Module::class, Course::class);
+    }
+
+    //ENROLLMENT
+    public function enrollments()
+    {
+        return $this->hasManyThrough(Module::class, Enrollment::class);
+    }
 }

@@ -16,11 +16,11 @@ return new class extends Migration
             $table->text('question_code');
             $table->text('answer_code');
             $table->text('tutorial_code');
-            $table->unsignedBigInteger('exercise_id');
+            $table->unsignedBigInteger('document_id');
             $table->timestamps();
-            $table->foreign('exercise_id')
+            $table->foreign('document_id')
             ->references('id')
-            ->on('exercises')
+            ->on('documents')
             ->onDelete('cascade');
         });
     }

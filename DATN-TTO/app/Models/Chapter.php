@@ -14,10 +14,10 @@ class Chapter extends Model
         'course_id',
     ];
 
-    //LESSON
-    public function lessons()
+    //DOCUMENT
+    public function documents()
     {
-        return $this->hasMany(Lesson::class);
+        return $this->hasMany(Document::class);
     }
     //COURSE
     public function course()

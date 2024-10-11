@@ -45,6 +45,12 @@ class Course extends Model
         return $this->hasMany(Chapter::class);
     }
 
+    //LESSON
+    public function documents()
+    {
+        return $this->hasManyThrough(Document::class, Chapter::class);
+    }
+
     //USER - INSTRUCTORS
     public function user()
     {

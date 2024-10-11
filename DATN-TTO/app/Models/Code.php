@@ -13,7 +13,7 @@ class Code extends Model
         'question_code',
         'answer_code',
         'tutorial_code',
-        'exercise_id',
+        'document_id',
     ];
 
     //ANSWER_CODE
@@ -22,9 +22,9 @@ class Code extends Model
         return $this->hasMany(Answer_Code::class);
     }
 
-    //EXERCISE
-    public function exercise()
+    //DOCUMENT
+    public function document()
     {
-        return $this->belongsTo(Exercise::class);
+        return $this->belongsTo(Document::class);
     }
 }

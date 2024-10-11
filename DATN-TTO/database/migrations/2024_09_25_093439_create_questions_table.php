@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->text('content_question');
             $table->enum('type_question', ['multiple_choice', 'fill', 'true_false']);
-            $table->unsignedBigInteger('exercise_id');
+            $table->unsignedBigInteger('document_id');
             $table->timestamps();
-            $table->foreign('exercise_id')
+            $table->foreign('document_id')
             ->references('id')
-            ->on('exercises')
+            ->on('documents')
             ->onDelete('cascade');
         });
     }

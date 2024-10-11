@@ -21,14 +21,12 @@ class DatabaseSeeder extends Seeder
         \App\Models\Enrollment::factory(5)->create();
         \App\Models\Reminder::factory(5)->create();
         \App\Models\Chapter::factory(5)->create();
-        \App\Models\Lesson::factory(5)->create();
+        \App\Models\Document::factory(5)->create();
         \App\Models\Note::factory(5)->create();
-        \App\Models\FAQ_Lesson::factory(5)->create();
         \App\Models\Url_Quality::factory(5)->create();
         \App\Models\Url_Sub_Title::factory(5)->create();
         \App\Models\Status_Video::factory(5)->create();
-        \App\Models\Comment_Lesson::factory(5)->create();
-        \App\Models\Exercise::factory(5)->create();
+        \App\Models\Comment_Document::factory(5)->create();
         \App\Models\Question::factory(5)->create();
         \App\Models\Answer_Question::factory(5)->create();
         \App\Models\Code::factory(5)->create();

@@ -12,7 +12,7 @@ class Question extends Model
     protected $fillable = [
         'content_question',
         'type_question',
-        'exercise_id',
+        'document_id',
     ];
 
     //ANSWER_QUESTION
@@ -21,9 +21,9 @@ class Question extends Model
         return $this->hasMany(Answer_Question::class);
     }
 
-    //EXERCISE
-    public function exercise()
+    //DOCUMENT
+    public function document()
     {
-        return $this->belongsTo(Exercise::class);
+        return $this->belongsTo(Document::class);
     }
 }

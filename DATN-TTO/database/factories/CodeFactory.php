@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Document;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Exercise;
 /**
@@ -20,7 +21,7 @@ class CodeFactory extends Factory
             'question_code' => fake()->text(100),
             'answer_code' => fake()->text(100),
             'tutorial_code' => fake()->text(200),
-            'exercise_id' => Exercise::factory(),
+            'document_id' => Document::factory(),
         ];
     }
 }

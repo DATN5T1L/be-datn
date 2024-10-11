@@ -12,12 +12,12 @@ class Url_Quality extends Model
     protected $fillable = [
         'quality_video',
         'quality_url',
-        'lesson_id',
+        'document_id',
     ];
 
-    //LESSON
-    public function lesson()
+    //DOCUMENT
+    public function document()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(Document::class);
     }
 }

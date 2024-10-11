@@ -15,11 +15,11 @@ class RouteApiController extends Controller
     public function index()
     {
         try {
-            $route = Route::all();
+            $routes = Route::all();
             return response()->json([
                 'status' => 'success',
                 'message' => 'Dữ liệu được lấy thành công',
-                'data' => RouteResource::collection($route),
+                'data' => RouteResource::collection($routes),
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
@@ -82,11 +82,11 @@ class RouteApiController extends Controller
     public function show(string $id)
     {
         try {
-            $routeDetail = Route::findOrFail($id);
+            $route = Route::findOrFail($id);
             return response()->json([
                 'status' => 'success',
                 'message' => 'Dữ liệu được lấy thành công',
-                'data' => new RouteResource($routeDetail),
+                'data' => new RouteResource($route),
             ], 200);
         } catch (\Exception $e) {
             return response()->json([

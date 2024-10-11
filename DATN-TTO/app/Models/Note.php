@@ -13,15 +13,15 @@ class Note extends Model
         'title_note',
         'content_note',
         'cache_time_note',
-        'lesson_id',
+        'document_id',
         'user_id',
 
     ];
 
-    //LESSON
-    public function lesson()
+    //DOCUMENT
+    public function document()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(Document::class);
     }
 
     //USER

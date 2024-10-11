@@ -5,29 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lesson extends Model
+class Document extends Model
 {
+
     use HasFactory;
-    protected $table = 'lessons';
+    protected $table = 'documents';
     protected $fillable = [
-        'name_lesson',
-        'discription_lesson',
-        'poster_lesson',
-        'type_lesson',
+        'name_document',
+        'discription_document',
+        'poster_document',
+        'url_video',
+        'type_document',
         'chapter_id',
 
     ];
 
-    //FAQ
-    public function faqs_lesson()
+    //COMMENT_DOCUMENT
+    public function comments_document()
     {
-        return $this->hasMany(FAQ_Lesson::class);
-    }
-
-    //COMMENT_LESSON
-    public function comments_lesson()
-    {
-        return $this->hasMany(Comment_Lesson::class);
+        return $this->hasMany(Comment_Document::class);
     }
 
     //URL_QUALITY
@@ -48,11 +44,6 @@ class Lesson extends Model
         return $this->hasMany(Status_Video::class);
     }
 
-    //EXERCISE
-    public function exercises()
-    {
-        return $this->hasMany(Exercise::class);
-    }
 
     //NOTE
     public function notes()

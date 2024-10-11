@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Document;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Lesson;
 /**
@@ -19,7 +20,7 @@ class Url_QualityFactory extends Factory
         return [
             'quality_video' => fake()->randomElement(['144', '240', '360', '480', '720', '1080']),
             'quality_url' => fake()->url,
-            'lesson_id' => Lesson::factory(),
+            'document_id' => Document::factory(),
         ];
     }
 }

@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->enum('sub_title_video', ['Vietnamese', 'English', 'Chinese', 'Japanese', 'Russian']);
             $table->string('sub_title_url');
-            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('document_id');
             $table->timestamps();
-            $table->foreign('lesson_id')
+            $table->foreign('document_id')
                 ->references('id')
-                ->on('lessons')
+                ->on('documents')
                 ->onDelete('cascade');
         });
     }

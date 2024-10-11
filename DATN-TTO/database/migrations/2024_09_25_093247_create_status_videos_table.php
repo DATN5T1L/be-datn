@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->boolean('status_video')->default(false);
             $table->unsignedInteger('cache_time_video');
-            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('document_id');
             $table->unsignedBigInteger('enrollment_id');
             $table->timestamps();
-            $table->foreign('lesson_id')
+            $table->foreign('document_id')
                 ->references('id')
-                ->on('lessons')
+                ->on('documents')
                 ->onDelete('cascade');
             $table->foreign('enrollment_id')
                 ->references('id')

@@ -14,8 +14,8 @@ class CourseResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return[
-            'id' => $this->id,
+        return [
+            'course_id' => $this->id,
             'name_course' => $this->name_course,
             'img_course' => $this->img_course,
             'price_course' => $this->price_course,
@@ -23,12 +23,14 @@ class CourseResource extends JsonResource
             'status_course' => $this->status_course,
             'views_course' => $this->views_course,
             'rating_course' => $this->rating_course,
-            'num_lesson' => $this->num_lesson,
+            'num_document' => $this->whenCounted('documents'),
+            'num_chapter' => $this->whenCounted('chapters'),
             'tax_rate' => $this->tax_rate,
             'del_flag' => $this->del_flag,
             'instructor_id' => $this->user_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'chapters' => ChapterResource::collection($this->chapters),
         ];
     }
 }

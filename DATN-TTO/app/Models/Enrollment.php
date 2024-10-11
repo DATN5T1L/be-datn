@@ -34,11 +34,6 @@ class Enrollment extends Model
         return $this->hasMany(Status_Video::class);
     }
 
-    //EXERCISE
-    public function exercises()
-    {
-        return $this->hasMany(Exercise::class);
-    }
 
     //MODULE
     public function module()

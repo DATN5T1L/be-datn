@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('title_note');
             $table->text('content_note');
             $table->unsignedInteger('cache_time_note');
-            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('document_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('lesson_id')
+            $table->foreign('document_id')
                 ->references('id')
-                ->on('lessons')
+                ->on('documents')
                 ->onDelete('cascade');
             $table->foreign('user_id')
                 ->references('id')

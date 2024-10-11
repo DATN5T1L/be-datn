@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Document;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Lesson;
 /**
@@ -19,7 +20,7 @@ class Url_Sub_TitleFactory extends Factory
         return [
             'sub_title_video' => fake()->randomElement(['Vietnamese', 'English', 'Chinese', 'Japanese', 'Russian']), // Ngôn ngữ phụ đề video
             'sub_title_url' => fake()->url,
-            'lesson_id' => Lesson::factory(),
+            'document_id' => Document::factory(),
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Document;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Lesson;
 use App\Models\Enrollment;
@@ -20,7 +21,7 @@ class Status_VideoFactory extends Factory
         return [
             'status_video' => fake()->boolean(0),
             'cache_time_video' => fake()->numberBetween(1, 3600),
-            'lesson_id' => Lesson::factory(),
+            'document_id' => Document::factory(),
             'enrollment_id' => Enrollment::factory(),
         ];
     }

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CourseResource;
-use App\Models\Course;
+use App\Http\Resources\DocumentResource;
+use App\Models\Document;
 use Illuminate\Http\Request;
 
-class CourseApiController extends Controller
+class DocumentApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,11 @@ class CourseApiController extends Controller
     public function index()
     {
         try {
-            $courses = Course::withCount('chapters')->get();
+            $documents = Document::all();
             return response()->json([
                 'status' => 'success',
                 'message' => 'Dữ liệu được lấy thành công',
-                'data' => CourseResource::collection($courses),
+                'data' => DocumentResource::collection($documents),
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
@@ -52,17 +52,12 @@ class CourseApiController extends Controller
     public function show(string $id)
     {
         try {
-            $course =  Course::findOrFail($id);
-            $course = Course::withCount(['chapters', 'documents']) // Đếm số chapters và lessons
-                ->with('chapters.documents') // Lấy các chapters cùng lessons lồng nhau
-                ->findOrFail($id);
-
+            $document = Document::findOrFail($id);
             return response()->json([
                 'status' => 'success',
-                'message' => 'Lấy dữ liệu thành công',
-                'data' => new CourseResource($course),
+                'message' => 'Dữ liệu được lấy thành công',
+                'data' => new DocumentResource($document),
             ], 200);
-
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 'fail',
@@ -71,7 +66,6 @@ class CourseApiController extends Controller
             ], 400);
         }
     }
-
 
     /**
      * Show the form for editing the specified resource.

@@ -5,30 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment_Lesson extends Model
+class Comment_Document extends Model
 {
     use HasFactory;
-    protected $table = 'comments_lesson';
+    protected $table = 'comments_document';
     protected $fillable = [
-        'question_text',
+        'comment_title',
+        'comment_text',
         'status',
-        'lesson_id',
+        'document_id',
         'user_id',
         'comment_to'
     ];
+
     protected $attributes = [
         'status' => 'active',
     ];
     //COMMENT - BÌNH LUẬN
     public function comments()
     {
-        return $this->hasMany(Comment_Lesson::class);
+        return $this->hasMany(Comment_Document::class);
     }
 
-    //LESSON
-    public function lesson()
+    //DOCUMENT
+    public function document()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(Document::class);
     }
 
     //USER
@@ -40,6 +42,7 @@ class Comment_Lesson extends Model
     //COMMENT_TO - BÌNH LUẬN TRẢ LỜI
     public function comment()
     {
-        return $this->belongsTo(Comment_Lesson::class);
+        return $this->belongsTo(Comment_Document::class);
     }
+    
 }

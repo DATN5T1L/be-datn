@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Document;
 use App\Models\Lesson;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -22,7 +23,7 @@ class NoteFactory extends Factory
             'title_note' => fake()->sentence(5),
             'content_note' => fake()->paragraph(),
             'cache_time_note' => fake()->numberBetween(1, 3600),
-            'lesson_id' => Lesson::factory(),
+            'document_id' => Document::factory(),
             'user_id' => User::factory(),
         ];
     }

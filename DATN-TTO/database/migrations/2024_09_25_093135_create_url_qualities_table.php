@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->enum('quality_video', ['144', '240', '360', '480', '720', '1080']);
             $table->string('quality_url');
-            $table->unsignedBigInteger('lesson_id');
+            $table->unsignedBigInteger('document_id');
             $table->timestamps();
-            $table->foreign('lesson_id')
+            $table->foreign('document_id')
                 ->references('id')
-                ->on('lessons')
+                ->on('documents')
                 ->onDelete('cascade');
         });
     }

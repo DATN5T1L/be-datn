@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Document;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Exercise;
 /**
@@ -19,7 +20,7 @@ class QuestionFactory extends Factory
         return[
         'content_question' => fake()->sentence(10),
             'type_question' => fake()->randomElement(['multiple_choice', 'fill', 'true_false']), // Loại câu hỏi
-            'exercise_id' => Exercise::factory(),
+            'document_id' => Document::factory(),
         ];
     }
 }

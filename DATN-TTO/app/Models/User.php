@@ -46,10 +46,10 @@ class User extends Authenticatable
         return $this->hasMany(Comment_Post::class);
     }
 
-    //COMMENTS_LESSON
-    public function comments_lesson()
+    //COMMENTS_DOCUMENT
+    public function comments_document()
     {
-        return $this->hasMany(Comment_Lesson::class);
+        return $this->hasMany(Comment_Document::class);
     }
 
     //COURSE - KHÓA HỌC CỦA GIẢNG VIÊN 

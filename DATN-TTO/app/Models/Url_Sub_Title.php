@@ -12,12 +12,12 @@ class Url_Sub_Title extends Model
     protected $fillable = [
         'sub_title_video',
         'sub_title_url',
-        'lesson_id',
+        'document_id',
     ];
 
-    //LESSON
-    public function lesson()
+    //DOCUMENT
+    public function document()
     {
-        return $this->belongsTo(Lesson::class);
+        return $this->belongsTo(Document::class);
     }
 }
